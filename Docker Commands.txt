@@ -1,0 +1,42 @@
+docker run -p 9411:9411 openzipkin/zipkin:2.23
+
+docker run -p externalport:internal_docker_port imagename:version_tag
+
+spring-boot:build-image -DskipTests
+
+docker images
+
+docker image remove (starting 4 image id)
+ - to remove particular docker image
+ - you need to stop and remove(prune) stopped container first before
+   removing the image of that container
+   
+   (image is like blueprint and container is actual runtime
+    instance based on the blueprint) 
+
+
+docker container ls -a 
+ - to list all docker containers stopped as well as running
+
+docker container prune 
+ - to remove the stopped containers
+
+
+
+
+
+
+		
+docker container ls -a
+docker container stop id(first 4 digit)
+docker container prune
+docker compose -f docker-compose-05-zipkin.yaml up
+docker images
+docker image remove imageid(first 4 digits)
+ 
+ 
+start docker engine (docker desktop) first:
+docker run -p externalport:internal_docker_port imagename:version_tag
+docker run -p 9411:9411 openzipkin/zipkin:2.23
+ 
+
